@@ -10,7 +10,6 @@
   "author": "CollierDevs",
   "license": "ISC",
   "dependencies": {
-    "@keyv/postgres": "^1.0.16",
     "canvas": "^2.6.1",
     "chalk": "^4.1.0",
     "common-tags": "^1.8.0",
