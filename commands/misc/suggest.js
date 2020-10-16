@@ -1,8 +1,8 @@
-const commando = require('discord.js-commando');
+const { Command } = require('discord.js-commando');
 const oneLine = require('common-tags').oneLine;
-const { MessageEmbed } = require('discord.js')
+const { MessageEmbed } = require('discord.js');
 
-module.exports = class SuggestCommand extends commando.Command {
+module.exports = class SuggestCommand extends Command {
     constructor(client) {
         super(client, {
             name: 'suggest',
@@ -24,17 +24,16 @@ module.exports = class SuggestCommand extends commando.Command {
                     type: 'string',
                 },
             ],
-        })
+        });
     }
 
     async run(msg, args) {
-        if (msg.author.bot) return;
-        msg.reply("Thank you for your suggestion, I have sent it over to my Developers!")
-        let suggestion = new MessageEmbed()
+        msg.reply("Thank you for your suggestion, I have sent it over to my Developers!");
+        const suggestion = new MessageEmbed()
         .setAuthor(`Suggestion from ${msg.author.tag} | ${msg.author.id}`, msg.author.displayAvatarURL)
         .addField("Suggestion", args.suggestion)
         .setColor("AQUA")
-        .setTimestamp()
-        this.client.channels.get('637457372603875328').send(suggestion)
+        .setTimestamp();
+        this.client.channels.get('637457372603875328').send(suggestion);
     }
-}
+};

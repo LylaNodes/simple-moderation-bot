@@ -8,13 +8,12 @@ module.exports = class LeaveCommand extends Command {
       group: 'music',
       memberName: 'leave',
       guildOnly: true,
-      description: 'Leaves voice channel if in one'
+      description: 'Leaves voice channel if in one',
     });
   }
 
   run(message) {
-    if (message.author.bot) return;
-    var voiceChannel = message.member.voice.channel;
+    const voiceChannel = message.member.voice.channel;
     if (!voiceChannel) return message.reply('Join a channel and try again');
 
     if (

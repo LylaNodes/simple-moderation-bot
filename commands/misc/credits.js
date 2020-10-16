@@ -1,7 +1,7 @@
-const commando = require('discord.js-commando');
+const { Command } = require('discord.js-commando');
 const oneLine = require('common-tags').oneLine;
-
-module.exports = class CreditsCommand extends commando.Command {
+const { MessageEmbed } = require('discord.js');
+module.exports = class CreditsCommand extends Command {
     constructor(client) {
         super(client, {
             name: 'credits',
@@ -12,17 +12,15 @@ module.exports = class CreditsCommand extends commando.Command {
                 Displays bot Developer(s) and such.
             `,
             examples: ['credits'],
-        })
+        });
     }
 
     async run(msg) {
-        if (msg.author.bot) return;
-        let { MessageEmbed } = require('discord.js')
-        let embed = new MessageEmbed()
+        const embed = new MessageEmbed()
         .setTitle("Bot Credits")
         .setDescription("Blizzard is created by CollierDevs#2407")
         .setFooter("Blizzard is made with 💖 and ☕")
-        .setColor("AQUA")
-        msg.channel.send(embed)
+        .setColor("AQUA");
+        msg.channel.send(embed);
     }
-}
+};

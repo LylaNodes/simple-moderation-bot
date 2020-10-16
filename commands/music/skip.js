@@ -1,4 +1,3 @@
-
 const { Command } = require('discord.js-commando');
 
 module.exports = class SkipCommand extends Command {
@@ -9,12 +8,11 @@ module.exports = class SkipCommand extends Command {
       memberName: 'skip',
       group: 'music',
       description: 'Skip the current playing song',
-      guildOnly: true
+      guildOnly: true,
     });
   }
 
   run(message) {
-    if (message.author.bot) return;
     const voiceChannel = message.member.voice.channel;
     if (!voiceChannel) return message.reply('Join a channel and try again');
 

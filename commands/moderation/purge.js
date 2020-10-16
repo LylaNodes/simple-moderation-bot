@@ -13,19 +13,18 @@ module.exports = class PurgeCommand extends Command {
         {
           key: "purgecount",
           prompt: "How many messages should I purge??",
-          type: "integer"
-        }
+          type: "integer",
+        },
       ],
-      guildOnly: true
+      guildOnly: true,
     });
   }
 
   async run(message, args) {
     // Purge Command!
-    if (message.author.bot) return;
     if (args.purgecount > 100)
       return message.reply(
-        "You can currently only purge up to 100 messages at a time."
+        "You can currently only purge up to 100 messages at a time.",
       );
 
     await message.channel.messages
@@ -38,7 +37,7 @@ module.exports = class PurgeCommand extends Command {
         message
           .reply(`🗑️ Sucessfully Deleted ${args.purgecount} messages.`)
           .then(async e => {
-            await e.delete(2000);
+            await e.delete({ timeout: 2000 });
           });
       });
   }

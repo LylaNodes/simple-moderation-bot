@@ -9,12 +9,11 @@ module.exports = class JokeCommand extends commando.Command {
       name: "joke",
       group: "fun",
       memberName: "joke",
-      description: "Gives you a funny dad joke"
+      description: "Gives you a funny dad joke",
     });
   }
 
   async run(message) {
-    if (message.author.bot) return;
     const dadjoke = await joke.randomJoke();
     message.reply(dadjoke);
   }

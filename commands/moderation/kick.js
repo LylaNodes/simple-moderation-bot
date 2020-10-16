@@ -10,15 +10,14 @@ module.exports = class KickCommand extends commando.Command {
             description: 'Just a kick command :)',
             clientPermissions: ['KICK_MEMBERS'],
             userPermissions: ['KICK_MEMBERS'],
-            guildOnly: true
-        })
+            guildOnly: true,
+        });
     }
 
     async run(msg) {
-        if (msg.author.bot) return;
-        var member = msg.mentions.members.first();
-        member.kick().then((member) => {
+        const member = msg.mentions.members.first();
+        member.kick().then((kicked) => {
             // Successmessage
-            msg.channel.send(":wave: " + member.displayName + " has been successfully kicked :point_right: ");
-        })
-}}
+            msg.channel.send(":wave: " + kicked.displayName + " has been successfully kicked :point_right: ");
+        });
+}};

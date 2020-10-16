@@ -11,21 +11,20 @@ module.exports = class VolumeCommand extends Command {
       description: "Adjust song volume",
       throttling: {
         usages: 1,
-        duration: 5
+        duration: 5,
       },
       args: [
         {
           key: "wantedVolume",
           prompt: "What volume would you like to set? from 1 to 200",
           type: "integer",
-          validate: wantedVolume => wantedVolume >= 1 && wantedVolume <= 200
-        }
-      ]
+          validate: wantedVolume => wantedVolume >= 1 && wantedVolume <= 200,
+        },
+      ],
     });
   }
 
   run(message, { wantedVolume }) {
-    if (message.author.bot) return;
     const voiceChannel = message.member.voice.channel;
     if (!voiceChannel) return message.reply("Join a channel and try again");
 
