@@ -8,6 +8,7 @@ on:
       - '*.md'
       - 'Procfile'  
       - 'pnpm-lock.yaml'
+      - 'node_modules/**'
   pull_request:
     branches: 
       - '*'
@@ -16,6 +17,7 @@ on:
       - '*.md'
       - 'Procfile'  
       - 'pnpm-lock.yaml'
+      - 'node_modules/**'
 jobs:
   eslint:
     runs-on: ubuntu-latest
