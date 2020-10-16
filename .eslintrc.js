@@ -6,7 +6,8 @@ module.exports = {
     "parserOptions": {
         "ecmaVersion": 11,
         "sourceType": "module",
-    },
+	},
+	"ignorePatterns": ["node_modules"],
     "rules": {
 		"comma-dangle": ["error", "always-multiline"],
 		"comma-spacing": "error",
