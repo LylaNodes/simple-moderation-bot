@@ -1,13 +1,12 @@
 require("dotenv").config();
 const commando = require("discord.js-commando");
 const oneLine = require("common-tags").oneLine;
-const Discord = require("discord.js");
 const Tenor = require("tenorjs").client({
   Key: process.env.TENORAPI, // https://tenor.com/developer/keyregistration
   Filter: "off", // "off", "low", "medium", "high", not case sensitive
   Locale: "en_US", // Your locale here, case-sensitivity depends on input
   MediaFilter: "minimal", // either minimal or basic, not case sensitive
-  DateFormat: "D/MM/YYYY - H:mm:ss A" // Change this accordingly
+  DateFormat: "D/MM/YYYY - H:mm:ss A", // Change this accordingly
 });
 
 module.exports = class HugCommand extends commando.Command {
@@ -24,8 +23,8 @@ module.exports = class HugCommand extends commando.Command {
       examples: ["hug @Wumpus#0000"],
       throttling: {
         usages: 2,
-        duration: 10
-      }
+        duration: 10,
+      },
     });
   }
 
@@ -35,7 +34,7 @@ module.exports = class HugCommand extends commando.Command {
       .then(Results => {
         Results.forEach(Post => {
           msg.channel.send(
-            user.tag + " Was furiousley hugged by " + msg.author.tag
+            user.tag + " Was furiousley hugged by " + msg.author.tag,
           );
           msg.channel.send(`${Post.url}`);
         });

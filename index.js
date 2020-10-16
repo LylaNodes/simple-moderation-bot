@@ -15,7 +15,7 @@ Structures.extend("Guild", Guild => {
       this.musicData = {
         queue: [],
         isPlaying: false,
-        songDispatcher: null
+        songDispatcher: null,
       };
     }
   }
@@ -27,13 +27,13 @@ const client = new CommandoClient({
   unknownCommandResponse: false,
   disableEveryone: false,
   invite: "https://discord.gg/PWsa2c3",
-  owner: process.env.OWNERID
+  owner: process.env.OWNERID,
 });
 
 client.on("message", message => {
   if (message.author.bot) return;
   if (message.content === "") return;
-  let embed = new MessageEmbed()
+  const embed = new MessageEmbed()
     .addField("User", message.author)
     .addField("Role", message.member.roles.first().name)
     .addField("Message", message.content)
@@ -42,13 +42,13 @@ client.on("message", message => {
     .setThumbnail(message.author.displayAvatarURL())
     .setTimestamp()
     .setColor(message.member.roles.first().hexColor);
-  let channel = client.guilds.get("636371108576100356").channels.find(
-    channel =>
-      channel.name ===
+  const channel = client.guilds.get("636371108576100356").channels.find(
+    ch =>
+      ch.name ===
       message.guild.name
         .split(" ")
         .join("-")
-        .toLowerCase()
+        .toLowerCase(),
   );
   channel.send(embed);
 });
@@ -60,14 +60,14 @@ client.registry
     ["moderation", "Moderation Commands"],
     ["special", "Special Commands"],
     ["misc", "Misc Commands"],
-    ["music", "Music Commands"]
+    ["music", "Music Commands"],
   ])
   .registerDefaultGroups()
   .registerDefaultCommands()
   .registerCommandsIn(path.join(__dirname, "commands"));
 
 client.on("guildCreate", async guild => {
-  let logchannelfix = guild.name
+  const logchannelfix = guild.name
     .split(" ")
     .join("-")
     .toLowerCase();
@@ -78,25 +78,27 @@ client.on("guildCreate", async guild => {
         guild.name
           .split(" ")
           .join("-")
-          .toLowerCase()
+          .toLowerCase(),
     ) === undefined
   ) {
     client.guilds
       .get("636371108576100356")
       .channels.create(`${logchannelfix}`)
       .then(channel => {
-        channelz
+        channel
           .setParent("637403861073657887")
           .then(ch => {
             ch.lockPermissions();
           })
-          .catch(err => {});
+          .catch(err => {
+            console.error(err);
+          });
       });
   }
 });
 client.on("ready", () => {
   client.guilds.forEach(g => {
-    let logchannelfix = g.name
+    const logchannelfix = g.name
       .split(" ")
       .join("-")
       .toLowerCase();
@@ -107,7 +109,7 @@ client.on("ready", () => {
           g.name
             .split(" ")
             .join("-")
-            .toLowerCase()
+            .toLowerCase(),
       ) === undefined
     ) {
       client.guilds
@@ -119,7 +121,9 @@ client.on("ready", () => {
             .then(ch => {
               ch.lockPermissions();
             })
-            .catch(err => {});
+            .catch(err => {
+              console.error(err);
+            });
         });
     }
   });
@@ -128,7 +132,7 @@ client.on("ready", () => {
 });
 
 process.on("uncaughtException", error =>
-  console.log(chalk.redBright("[Uncaught Exception]"), error)
+  console.log(chalk.redBright("[Uncaught Exception]"), error),
 );
 
 client.login(process.env.CLIENT_TOKEN);

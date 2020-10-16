@@ -1,9 +1,9 @@
-const commando = require("discord.js-commando");
-const Discord = require("discord.js");
+const { Command } = require("discord.js-commando");
+const { MessageEmbed } = require("discord.js");
 const querystring = require("querystring");
 const fetch = require("node-fetch");
 
-module.exports = class UrbanCommand extends commando.Command {
+module.exports = class UrbanCommand extends Command {
   constructor(client) {
     super(client, {
       name: "urban",
@@ -14,15 +14,14 @@ module.exports = class UrbanCommand extends commando.Command {
         {
           key: "searchquery",
           prompt: "What would you like to look up?",
-          type: "string"
-        }
+          type: "string",
+        },
       ],
-      guildOnly: true
+      guildOnly: true,
     });
   }
 
   async run(message, args) {
-    if (message.author.bot) return;
     if (!message.channel.nsfw)
       return message.reply("Command can only be used in NSFW Channels.");
     if (!args) return message.reply("Please specify your search");
@@ -32,18 +31,18 @@ module.exports = class UrbanCommand extends commando.Command {
     const query = querystring.stringify({ term: args.searchquery });
 
     const { list } = await fetch(
-      `https://api.urbandictionary.com/v0/define?${query}`
+      `https://api.urbandictionary.com/v0/define?${query}`,
     ).then(response => response.json());
 
     if (!list.length) {
       return message.channel.send(
-        `No results found for **${args.searchquery}**.`
+        `No results found for **${args.searchquery}**.`,
       );
     }
 
-    let [answer] = list;
+    const [answer] = list;
 
-    const embed = new Discord.MessageEmbed()
+    const embed = new MessageEmbed()
       .setColor("YELLOW")
       .setTitle(answer.word)
       .setURL(answer.permalink)

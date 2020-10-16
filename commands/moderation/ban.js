@@ -9,14 +9,13 @@ module.exports = class BanCommand extends commando.Command {
             description: 'Just a ban command :)',
             clientPermissions: ['BAN_MEMBERS'],
             userPermissions: ['BAN_MEMBERS'],
-            guildOnly: true
-        })
+            guildOnly: true,
+        });
     }
 
     async run(msg) {
-        if (msg.author.bot) return;
-        var member = msg.mentions.members.first();
-        member.ban().then((member) => {
-            msg.channel.send(":wave: " + member.displayName + " has been successfully Banned :point_right: ");
-        })
-}}
+        const member = msg.mentions.members.first();
+        member.ban().then((banned) => {
+            msg.channel.send(":wave: " + banned.displayName + " has been successfully Banned :point_right: ");
+        });
+}};
