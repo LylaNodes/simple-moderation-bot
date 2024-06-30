@@ -20,8 +20,8 @@ module.exports = class CreditsCommand extends commando.Command {
         let { MessageEmbed } = require('discord.js')
         let embed = new MessageEmbed()
         .setTitle("Bot Credits")
-        .setDescription("Blizzard is created by CollierDevs#2407")
-        .setFooter("Blizzard is made with 💖 and ☕")
+        .setDescription("This, bot is made by the LylaNodes Team.")
+        .setFooter("Bot is made with 💖 and ☕")
         .setColor("AQUA")
         msg.channel.send(embed)
     }
