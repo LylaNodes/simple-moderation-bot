@@ -1,3 +1,5 @@
+// stop command
+
 const { Command } = require('discord.js-commando');
 
 module.exports = class LeaveCommand extends Command {
