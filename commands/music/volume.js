@@ -1,3 +1,5 @@
+// volume command
+
 const { Command } = require("discord.js-commando");
 
 module.exports = class VolumeCommand extends Command {
