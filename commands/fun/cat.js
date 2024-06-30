@@ -13,7 +13,7 @@ module.exports = class CatCommand extends commando.Command {
       name: "cat",
       group: "fun",
       memberName: "cat",
-      description: "Meow."
+      description: "Shows, a image of a cat meow."
     });
   }
 
