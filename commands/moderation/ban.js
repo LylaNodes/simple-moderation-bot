@@ -1,4 +1,4 @@
-# Ban command
+// Ban command
 
 const commando = require('discord.js-commando');
 
