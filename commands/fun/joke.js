@@ -9,7 +9,7 @@ module.exports = class JokeCommand extends commando.Command {
       name: "joke",
       group: "fun",
       memberName: "joke",
-      description: "Gives you a funny dad joke"
+      description: "Makes, a funny dad joke."
     });
   }
 
