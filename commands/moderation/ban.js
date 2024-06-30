@@ -1,3 +1,5 @@
+# Ban command
+
 const commando = require('discord.js-commando');
 
 module.exports = class BanCommand extends commando.Command {
