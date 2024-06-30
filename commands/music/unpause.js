@@ -1,3 +1,5 @@
+// unpause command
+
 const { Command } = require('discord.js-commando');
 
 module.exports = class ResumeCommand extends Command {
