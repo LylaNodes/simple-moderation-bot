@@ -14,7 +14,7 @@ module.exports = class DogCommand extends commando.Command {
       name: "dog",
       group: "fun",
       memberName: "dog",
-      description: "Woof."
+      description: "Shows, a picture of a dog.."
     });
   }
 
