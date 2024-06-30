@@ -11,6 +11,8 @@
 **Functons & Features**
 - Moderation
 - Fun
+- Music
+- Special 
 
 
 **Features in Progress**
@@ -19,7 +21,7 @@
 - Automod
 - Uptimer
 - Economy
-- Music
+- Music(Advanced music system)
 
 **How do you use the bot?**
 - Go in a channel, and type your prefix. So our prefix is m?. So, we would type a?help.)
