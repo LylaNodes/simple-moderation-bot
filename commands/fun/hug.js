@@ -17,7 +17,7 @@ module.exports = class HugCommand extends commando.Command {
       aliases: [],
       group: "fun",
       memberName: "hug",
-      description: "Hug your friends! <3",
+      description: "Hug, a user.! <3",
       details: oneLine`
                 Hug your friends! <3
             `,
