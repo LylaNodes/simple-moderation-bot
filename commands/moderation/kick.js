@@ -1,3 +1,5 @@
+// kick command
+
 const commando = require('discord.js-commando');
 
 module.exports = class KickCommand extends commando.Command {
