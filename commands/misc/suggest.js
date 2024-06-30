@@ -8,7 +8,7 @@ module.exports = class SuggestCommand extends commando.Command {
             name: 'suggest',
             group: 'misc',
             memberName: 'suggest',
-            description: 'Allows you to suggest new features to the bot!',
+            description: 'Lets, you suggest new features!!',
             details: oneLine`
                 Allows you to suggest new features to the bot!
             `,
