@@ -10,7 +10,7 @@ module.exports = class HastebinCommand extends commando.Command {
       aliases: [],
       group: "misc",
       memberName: "haste",
-      description: "Posts to Hastebin",
+      description: "Posts your text to a hastebin",
       details: oneLine`
                 Posts to Hastebin
             `,
