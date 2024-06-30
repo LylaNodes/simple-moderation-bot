@@ -1,12 +1,12 @@
 {
-  "name": "thecatapi-discord-commando-bot",
+  "name": "marie-lylanodes",
   "version": "1.0.0",
-  "description": "Blizzard | Discord Moderation Bot",
+  "description": "Marie | Simple Moderation",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "CollierDevs",
+  "author": "LylaNodes",
   "license": "ISC",
   "dependencies": {
     "@keyv/postgres": "^1.0.16",
