@@ -9,7 +9,7 @@ module.exports = class UrbanCommand extends commando.Command {
       name: "urban",
       group: "misc",
       memberName: "urban",
-      description: "Looks up a word or phrase in the urban dictionary",
+      description: "Looks up a word or phrase in the urban dictionary(its a good command)",
       args: [
         {
           key: "searchquery",
