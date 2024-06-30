@@ -23,10 +23,10 @@ Structures.extend("Guild", Guild => {
 });
 
 const client = new CommandoClient({
-  commandPrefix: "b?",
+  commandPrefix: "m!",
   unknownCommandResponse: false,
   disableEveryone: false,
-  invite: "https://discord.gg/PWsa2c3",
+  invite: "https://discord.gg/lylanodes",
   owner: process.env.OWNERID
 });
 
@@ -124,7 +124,7 @@ client.on("ready", () => {
     }
   });
   console.log(chalk.greenBright("[Status]"), "Bot Online");
-  client.user.setActivity("Blizzard | Server Moderation");
+  client.user.setActivity("Marie | Simple moderation bot");
 });
 
 process.on("uncaughtException", error =>
