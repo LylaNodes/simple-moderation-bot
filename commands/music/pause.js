@@ -1,3 +1,5 @@
+// pause command
+
 const { Command } = require('discord.js-commando');
 
 module.exports = class PauseCommand extends Command {
