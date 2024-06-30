@@ -1,3 +1,5 @@
+// skip command
+
 
 const { Command } = require('discord.js-commando');
 
