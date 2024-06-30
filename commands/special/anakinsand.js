@@ -1,4 +1,4 @@
-// This is just a command made for fun, dont critic me for this haha.
+// anakinsand. This is a command for fun..
 const commando = require("discord.js-commando");
 const Discord = require("discord.js");
 
